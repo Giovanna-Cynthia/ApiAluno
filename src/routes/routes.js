@@ -15,5 +15,5 @@ router.get('/listaAluno', (req, res) =>{
     });
     res.end(texto);
 });
-//exporta o arquivo para o modulo de exportação, que executa os arquivos externos em que conjunto com o framework
+//exporta o arquivo para o modulo de exportação, que executa os arquivos externos em conjunto com o framework
 module.exports = router;
