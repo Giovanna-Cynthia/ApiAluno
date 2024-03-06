@@ -3,6 +3,8 @@ const express = require('express');
 //define o processo de rota no framework
 const router = express.Router();
 
+
+
 router.get('/listaAluno', (req, res) =>{
     let arrAluno = ["Giovanna", "Raphael", "Amanda"];
     let texto = "";
@@ -15,5 +17,13 @@ router.get('/listaAluno', (req, res) =>{
     });
     res.end(texto);
 });
+
+const indexView = require("../view/indexView")
+
+router.get('/formulario', (req, res, next) => {
+    res.send(indexView())
+});
+
+
 //exporta o arquivo para o modulo de exportação, que executa os arquivos externos em conjunto com o framework
 module.exports = router;

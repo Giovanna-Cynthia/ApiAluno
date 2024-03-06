@@ -1,6 +1,6 @@
 
-module.exports = () => {
-    return `
+const retornoTela = () => {
+    const tela = ( `
     <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -33,5 +33,7 @@ module.exports = () => {
     <script src="script.js"></script>
     </body>
     </html>
-`
+`);
+return tela;
 }
+module.exports = retornoTela;
