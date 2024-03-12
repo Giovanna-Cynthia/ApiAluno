@@ -3,7 +3,7 @@ const express = require('express');
 //define o processo de rota no framework
 const router = express.Router();
 
-const indexView = require(".../view/indexView");
+const indexView = require("../view/indexView");
 
 var arrAluno = [{name: 'Ana'}, {name: 'Carlos'}, {name: 'Renato'}];
 
@@ -20,7 +20,7 @@ router.get('/listaAluno', (req, res) =>{
     res.end(texto);
 });
 
-const indexView = require("../view/indexView")
+//const indexView = require("../view/indexView")
 
 router.get('/formulario', (req, res, next) => {
     res.send(indexView())
@@ -29,7 +29,7 @@ router.get('/formulario', (req, res, next) => {
 router.get('/AlunoNome/:name', (req, res) => {
     const {name} = req.params;
     const index = arrAluno.map(aluno => aluno.name).indexOf(name);
-    let texto;
+    let texto
     if (index > -1) {
         texto = "<h1>Aluno localizado no sistema.</h1> <h3>O id do Aluno no Array é" + index + "</h3>";
     } else{
