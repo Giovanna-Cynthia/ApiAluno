@@ -44,6 +44,7 @@ router.get('/cadastrarAluno/:name', (req, res) => {
 
     const index = arrAluno.map(aluno => aluno.name).indexOf(name);
 
+    console.log(name);
     if(index === -1) {
         let novoNome = {name: name};
         arrAluno.push(novoNome);
