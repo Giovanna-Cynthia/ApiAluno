@@ -3,10 +3,12 @@ const express = require('express');
 //define o processo de rota no framework
 const router = express.Router();
 
+const indexView = require(".../view/indexView");
 
+var arrAluno = [{name: 'Ana'}, {name: 'Carlos'}, {name: 'Renato'}];
 
 router.get('/listaAluno', (req, res) =>{
-    let arrAluno = ["Giovanna", "Raphael", "Amanda"];
+    //let arrAluno = ["Giovanna", "Raphael", "Amanda"];
     let texto = "";
 
     for (i = 0; i < arrAluno.length; i++) {
