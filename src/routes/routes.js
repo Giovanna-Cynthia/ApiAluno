@@ -61,9 +61,9 @@ router.get('/exlcuirAluno/:name', (req, res) => {
     const index = arrAluno.map(aluno => aluno.name).indexOf(name);
 
     console.log(name);
-    if(index === +1) {
-        let excluirNome = {name: name};
-        arrAluno.shift(excluirNome);
+    if(index > -1) {
+        
+        arrAluno.splice(index,1);
         res.send(arrAluno);
     }else{
         res.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'});
