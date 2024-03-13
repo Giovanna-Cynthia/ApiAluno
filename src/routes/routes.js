@@ -55,6 +55,22 @@ router.get('/cadastrarAluno/:name', (req, res) => {
     }
 });
 
+router.get('/exlcuirAluno/:name', (req, res) => {
+    const { name } = req.params;
+
+    const index = arrAluno.map(aluno => aluno.name).indexOf(name);
+
+    console.log(name);
+    if(index === +1) {
+        let excluirNome = {name: name};
+        arrAluno.shift(excluirNome);
+        res.send(arrAluno);
+    }else{
+        res.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'});
+        res.end("<h1>Usuário ja cadastrado</h1>");
+    }
+});
+
 
 //exporta o arquivo para o modulo de exportação, que executa os arquivos externos em conjunto com o framework
 module.exports = router;
