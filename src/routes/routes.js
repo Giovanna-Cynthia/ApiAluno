@@ -72,6 +72,10 @@ router.get('/deletarAluno/:name', (req, res) => {
     res.send(arrAluno);
 });
 
+router.post('/addAluno/', (req, res) => {
+    let dado = req.body;
+    res.send(JSON.stringify(dado));
+});
 
 //exporta o arquivo para o modulo de exportação, que executa os arquivos externos em conjunto com o framework
 module.exports = router;
