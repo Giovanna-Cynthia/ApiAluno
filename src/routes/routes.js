@@ -55,7 +55,7 @@ router.get('/cadastrarAluno/:name', (req, res) => {
     }
 });
 
-router.get('/exlcuirAluno/:name', (req, res) => {
+router.get('/deletarAluno/:name', (req, res) => {
     const { name } = req.params;
 
     const index = arrAluno.map(aluno => aluno.name).indexOf(name);
@@ -63,12 +63,13 @@ router.get('/exlcuirAluno/:name', (req, res) => {
     console.log(name);
     if(index > -1) {
         
-        arrAluno.splice(index,1);
+        arrAluno.splice(index, 1);
         res.send(arrAluno);
-    }else{
+    /*}else{
         res.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'});
-        res.end("<h1>Usuário ja cadastrado</h1>");
+        res.end("<h1>Usuário Deletado!</h1>");*/
     }
+    res.send(arrAluno);
 });
 
 
