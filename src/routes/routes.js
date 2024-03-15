@@ -1,5 +1,8 @@
 const express = require('express');
 
+const fs = require("fs");
+
+
 //define o processo de rota no framework
 const router = express.Router();
 
@@ -75,7 +78,11 @@ router.get('/deletarAluno/:name', (req, res) => {
 router.post('/addAluno/', (req, res) => {
     let dado = req.body;
     res.send(JSON.stringify(dado));
+
+    inserirDados(JSON.stringify(dado))
 });
+
+const inserirDados(dados, )
 
 //exporta o arquivo para o modulo de exportação, que executa os arquivos externos em conjunto com o framework
 module.exports = router;
